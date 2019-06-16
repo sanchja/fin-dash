@@ -1,0 +1,21 @@
+<h1>Users</h1>
+<hr>
+
+<h3>
+  Users are dynamically loaded using a rest api within a service to populate them to the DOM.<br>
+  click the buttons below to try it
+</h3>
+
+<button (click)="showUsers()">Show Users</button>
+<button (click)="hideUsers()">Hide Users</button>
+
+<ul *ngIf="isAvailable">
+  <li *ngFor="let user of users.data">{{user.data | async}}
+    <img [src]="user.avatar">
+    <p><strong>Id:</strong> {{user.id}} <br>
+      {{user.first_name}} {{user.last_name}}<br>
+      {{user.email}}</p>
+  </li>
+</ul>
+
+
